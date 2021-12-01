@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/famely"
+
+        android:title="FAMELY"
+        app:showAsAction="never"></item>
+
+    <item
+        android:id="@+id/action"
+
+        android:title="ACTION"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/Drama"
+
+        android:title="DRAMA"
+        app:showAsAction="" />
+
+
+    <item
+        android:id="@+id/Comedy"
+
+        android:title="COMEDY"
+        app:showAsAction="never" />
+
+</menu>
+
+
+
+

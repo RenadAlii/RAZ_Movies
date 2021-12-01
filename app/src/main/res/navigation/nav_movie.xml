@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_movie"
+    app:startDestination="@id/popularMoviesFragment">
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.razmovies.DetailsFragment"
+        android:label="Moveis Details">
+        <action
+            android:id="@+id/action_detailsFragment_to_popularMoviesFragment"
+            app:destination="@id/popularMoviesFragment" />
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/popularMoviesFragment"
+        android:name="com.example.razmovies.PopularMoviesFragment"
+        android:label="@string/popular_movies">
+        <action
+            android:id="@+id/action_popularMoviesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nowPlayingMoviesFragment"
+        android:name="com.example.razmovies.NowPlayingMoviesFragment"
+        android:label="@string/now_playing" />
+    <fragment
+        android:id="@+id/topRatedMoviesFragment"
+        android:name="com.example.razmovies.TopRatedMoviesFragment"
+        android:label="@string/top_rated" />
+    <fragment
+        android:id="@+id/upComingMoviesFragment"
+        android:name="com.example.razmovies.UpComingMoviesFragment"
+        android:label="@string/upcoming" />
+</navigation>
