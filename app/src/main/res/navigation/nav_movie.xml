@@ -28,13 +28,25 @@
     <fragment
         android:id="@+id/nowPlayingMoviesFragment"
         android:name="com.example.razmovies.NowPlayingMoviesFragment"
-        android:label="@string/now_playing" />
+        android:label="@string/now_playing" >
+        <action
+            android:id="@+id/action_nowPlayingMoviesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/topRatedMoviesFragment"
         android:name="com.example.razmovies.TopRatedMoviesFragment"
-        android:label="@string/top_rated" />
+        android:label="@string/top_rated" >
+        <action
+            android:id="@+id/action_topRatedMoviesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/upComingMoviesFragment"
         android:name="com.example.razmovies.UpComingMoviesFragment"
-        android:label="@string/upcoming" />
+        android:label="@string/upcoming" >
+        <action
+            android:id="@+id/action_upComingMoviesFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
 </navigation>

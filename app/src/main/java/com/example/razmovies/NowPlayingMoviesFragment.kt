@@ -6,7 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.razmovies.adapter.MoviesAdapter
+import com.example.razmovies.adapter.NowPlayingAdapter
+import com.example.razmovies.databinding.FragmentNowPlayingMoviesBinding
 import com.example.razmovies.databinding.FragmentPopularMoviesBinding
 import com.example.razmovies.model.MovieViewModel
 
@@ -14,7 +15,7 @@ import com.example.razmovies.model.MovieViewModel
 class NowPlayingMoviesFragment : Fragment() {
 
     private val viewModel: MovieViewModel by viewModels()
-    private var binding: FragmentPopularMoviesBinding? = null
+    private var binding: FragmentNowPlayingMoviesBinding? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,13 +27,13 @@ class NowPlayingMoviesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentPopularMoviesBinding.inflate(inflater)
+        val binding = FragmentNowPlayingMoviesBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment.
         binding.lifecycleOwner = this
         // Giving the binding access to the OverviewViewModel.
         binding.viewModel = viewModel
-        binding.photosGrid.adapter = MoviesAdapter()
+        binding.photosGrid.adapter = NowPlayingAdapter()
         viewModel.getNowPlayingMovies()
 
         return binding.root

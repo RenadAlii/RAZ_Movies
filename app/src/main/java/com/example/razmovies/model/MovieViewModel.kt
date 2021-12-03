@@ -88,6 +88,7 @@ class MovieViewModel : ViewModel() {
         viewModelScope.launch {
             _status.value = MovieApiStatus.LOADING
             try {
+
                 _moviesList.value = MovieApi.retrofitService.getMovie("upcoming").results!!
                 _status.value = MovieApiStatus.DONE
             } catch (e: Exception) {

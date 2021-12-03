@@ -7,13 +7,15 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.razmovies.adapter.MoviesAdapter
+import com.example.razmovies.adapter.UpcomingAdapter
 import com.example.razmovies.databinding.FragmentPopularMoviesBinding
+import com.example.razmovies.databinding.FragmentUpComingMoviesBinding
 import com.example.razmovies.model.MovieViewModel
 
 
 class UpComingMoviesFragment : Fragment() {
     private val viewModel: MovieViewModel by viewModels()
-    private var binding: FragmentPopularMoviesBinding? = null
+    private var binding: FragmentUpComingMoviesBinding? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +26,13 @@ class UpComingMoviesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentPopularMoviesBinding.inflate(inflater)
+        val binding = FragmentUpComingMoviesBinding.inflate(inflater)
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment.
         binding.lifecycleOwner = this
         // Giving the binding access to the OverviewViewModel.
         binding.viewModel = viewModel
-        binding.photosGrid.adapter = MoviesAdapter()
+        binding.photosGrid.adapter = UpcomingAdapter()
         // set the API on the UpcomingMovies.
         viewModel.getUpcomingMovies()
 

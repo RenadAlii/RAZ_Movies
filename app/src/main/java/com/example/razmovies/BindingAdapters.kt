@@ -7,6 +7,9 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.razmovies.adapter.MoviesAdapter
+import com.example.razmovies.adapter.NowPlayingAdapter
+import com.example.razmovies.adapter.TopRatedAdapter
+import com.example.razmovies.adapter.UpcomingAdapter
 import com.example.razmovies.data.ResultsItem
 import com.example.razmovies.model.MovieApiStatus
 
@@ -27,6 +30,27 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<ResultsItem>?){
     // this tell the RecyclerView new list is available.
     adapter.submitList(data)
 }
+
+@BindingAdapter("listDataNowPlaying")
+fun bindRecyclerViewForNowPlaying(recyclerView: RecyclerView, data: List<ResultsItem>?){
+    val adapter= recyclerView.adapter as NowPlayingAdapter
+    // this tell the RecyclerView new list is available.
+    adapter.submitList(data)
+}
+
+@BindingAdapter("listDataTopRated")
+fun bindRecyclerViewForTopRated(recyclerView: RecyclerView, data: List<ResultsItem>?){
+    val adapter= recyclerView.adapter as TopRatedAdapter
+    // this tell the RecyclerView new list is available.
+    adapter.submitList(data)
+}
+@BindingAdapter("listDataUpcoming")
+fun bindRecyclerViewForUpcoming(recyclerView: RecyclerView, data: List<ResultsItem>?){
+    val adapter= recyclerView.adapter as UpcomingAdapter
+    // this tell the RecyclerView new list is available.
+    adapter.submitList(data)
+}
+
 
 @BindingAdapter("moviesApiStatus")
 fun bindStatus(statusImageView: ImageView,
